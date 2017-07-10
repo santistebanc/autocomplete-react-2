@@ -1,11 +1,11 @@
 import countries from './countries.json';
 import React from 'react';
 
-const getMatchSubstrings = (str, query) => {
+const getMatchSubstrings = (str="", query="") => {
   //method to match a string against an input query
   let match = []
   let fromIndex = 0;
-  while (fromIndex !== -1) {
+  while (query.length > 0 && fromIndex !== -1) {
     const ind = str.indexOf(query, fromIndex)
     if (ind !== -1) {
       match.push({ length: query.length, offset: ind });
